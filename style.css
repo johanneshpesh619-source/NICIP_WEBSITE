@@ -92,6 +92,107 @@ h3{color:var(--navy);margin:.2rem 0 .6rem;font-size:1.2rem}
 .meta{color:var(--grey);font-size:.92rem;margin:0 0 .4rem}
 .badge{display:inline-block;background:var(--accent);color:#1d1400;font-weight:700;font-size:.78rem;padding:.1rem .6rem;border-radius:99px;margin-right:.3rem}
 
+.badge{
+  display:inline-block;
+  background:var(--accent);
+  color:#1d1400;
+  font-weight:700;
+  font-size:.78rem;
+  padding:.1rem .6rem;
+  border-radius:99px;
+  margin-right:.3rem
+}
+
+/* PROJECT PORTFOLIO */
+.project {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(11,47,107,.14);
+  border-color: var(--blue);
+}
+
+.project::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(
+    90deg,
+    var(--navy),
+    var(--accent)
+  );
+  transition: width 0.35s ease;
+}
+
+.project:hover::before {
+  width: 100%;
+}
+
+/* Mobile-friendly alternative */
+.project:active,
+.project:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(11,47,107,.14);
+  border-color: var(--blue);
+}
+
+.project:active::before,
+.project:focus-within::before {
+  width: 100%;
+}
+
+.project-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sky);
+  border-radius: 50%;
+  transition: all 0.35s ease;
+}
+
+.project-icon i {
+  font-size: 2rem;
+  color: var(--accent);
+  transition: all 0.35s ease;
+}
+
+.project:hover .project-icon,
+.project:active .project-icon,
+.project:focus-within .project-icon {
+  background: var(--navy);
+  transform: scale(1.08);
+}
+
+.project:hover .project-icon i,
+.project:active .project-icon i,
+.project:focus-within .project-icon i {
+  color: #fff;
+}
+
+.project h3{
+  min-height:60px;
+}
+
+@media (hover:none){
+  .project:active{
+    transform: scale(.98);
+  }
+}
+
+/* Contact */
+address{font-style:normal}
+
 /* Contact */
 address{font-style:normal}
 .form label{display:block;font-weight:600;margin:.8rem 0 .25rem;color:var(--navy)}
